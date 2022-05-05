@@ -14,6 +14,7 @@ export {
   getWindowTitle,
   dpiAware,
   sleep,
+  shutdown,
 } from "auto-io-addon";
 export { click, clickSync, doubleClick } from "./mouse";
 export { type, hotkey } from "./keyboard";
@@ -34,8 +35,4 @@ export {
   getMousePosition,
 } from "./mouse";
 export { getWindowByTitle, Window } from "./window";
-export {
-  filterByObject,
-  executeObjectDetection,
-  waitForObject,
-} from "./operators";
+export { forAround } from "./sleep";

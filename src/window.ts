@@ -6,7 +6,8 @@ import {
   screenCapture,
   setActiveWindow,
 } from "auto-io-addon";
-import { map, Observable, timer } from "rxjs";
+import { Observable, timer } from "rxjs";
+import { map } from "rxjs/operators";
 import { Rectangle } from "./rectangle";
 
 export class Window {

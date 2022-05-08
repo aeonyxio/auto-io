@@ -20,6 +20,7 @@ export { click, clickSync, doubleClick } from "./mouse";
 export { type, hotkey } from "./keyboard";
 export { Point } from "./point";
 export { Rectangle } from "./rectangle";
+export { Region } from "./region";
 export { straightTo } from "./easing";
 export {
   move,
@@ -36,3 +37,4 @@ export {
 } from "./mouse";
 export { getWindowByTitle, Window } from "./window";
 export { forAround } from "./sleep";
+export { highlight, highlightSync } from "./highlight";

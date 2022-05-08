@@ -31,12 +31,15 @@ export class Window {
     return screenCapture(region.x, region.y, region.width, region.height);
   };
 
-  watchScreen = (duration = 1000): Observable<Buffer> => {
+  watchScreen = (duration = 1000): Observable<[Buffer, Rectangle]> => {
     return timer(duration, duration).pipe(
       map(() => {
         const region = this.region;
         console.log(region);
-        return screenCapture(region.x, region.y, region.width, region.height);
+        return [
+          screenCapture(region.x, region.y, region.width, region.height),
+          this.region,
+        ];
       })
     );
   };

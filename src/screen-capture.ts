@@ -8,6 +8,6 @@ export const screenCaptureSync = (area: Rectangle) => {
   return screenCapSync(area.x, area.y, area.width, area.height);
 };
 
-export const screenCapture = (area: Rectangle) => {
+export const screenCapture = async (area: Rectangle) => {
   return screenCap(area.x, area.y, area.width, area.height);
 };

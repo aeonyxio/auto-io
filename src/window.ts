@@ -3,12 +3,10 @@ import {
   getWindowRect,
   getWindows,
   getWindowTitle,
-  screenCapture,
   setActiveWindow,
 } from "auto-io-addon";
-import { Observable, timer } from "rxjs";
-import { map } from "rxjs/operators";
 import { Rectangle } from "./rectangle";
+import { screenCaptureSync } from "./screen-capture";
 
 export class Window {
   private id: number;
@@ -27,21 +25,7 @@ export class Window {
   };
 
   screenshot = (): Buffer => {
-    const region = this.region;
-    return screenCapture(region.x, region.y, region.width, region.height);
-  };
-
-  watchScreen = (duration = 1000): Observable<[Buffer, Rectangle]> => {
-    return timer(duration, duration).pipe(
-      map(() => {
-        const region = this.region;
-        console.log(region);
-        return [
-          screenCapture(region.x, region.y, region.width, region.height),
-          this.region,
-        ];
-      })
-    );
+    return screenCaptureSync(this.region);
   };
 }
 

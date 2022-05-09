@@ -38,3 +38,4 @@ export {
 export { getWindowByTitle, Window } from "./window";
 export { forAround } from "./sleep";
 export { highlight, highlightSync } from "./highlight";
+export { screenCaptureSync } from "./screen-capture";
